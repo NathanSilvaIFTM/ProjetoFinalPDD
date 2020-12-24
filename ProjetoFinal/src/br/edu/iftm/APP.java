@@ -9,7 +9,7 @@ public class APP {
             System.exit(-1);
         }
         String senhaHash = args[0];
-        Cracker getResult = new Cracker();
+        Cracker resultado = new Cracker();
         Cracker t1 = new Cracker(1,senhaHash);
         Cracker t2 = new Cracker(2,senhaHash);
         Cracker t3 = new Cracker(3,senhaHash);
@@ -22,8 +22,8 @@ public class APP {
         t4.run();
         t5.run();
         t6.run();
-        if (getResult.achouSenha()) {
-            System.out.print(getResult.senhaEncontrada());
+        if (resultado.achouSenha()) {
+            System.out.print(resultado.senhaEncontrada());
             System.out.println("\nSenha Encontrada");
             System.exit(0);
         } else {

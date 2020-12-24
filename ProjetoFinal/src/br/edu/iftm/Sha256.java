@@ -9,7 +9,7 @@ public class Sha256 {
 
     public interface Hash {
 
-        public static String generate(String input) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        static String generate(String input) throws UnsupportedEncodingException, NoSuchAlgorithmException {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.reset();
             byte[] buffer = input.getBytes("UTF-8");
@@ -24,7 +24,7 @@ public class Sha256 {
         }
 
 
-        public static boolean compare(StringBuilder input, String hash) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        static boolean compare(StringBuilder input, String hash) throws UnsupportedEncodingException, NoSuchAlgorithmException {
             boolean achou = false;
             String teste = String.valueOf(input);
             String comparacao = Sha256.Hash.generate(teste);
